@@ -3,17 +3,6 @@ from django.db.models.signals import post_save, post_delete
 from .signals import update_vendor_metrics_on_po_save, update_vendor_metrics_on_po_delete, calculate_average_response_time, calculate_fulfillment_rate, calculate_on_time_delivery_rate, calculate_quality_rating_avg
 from django.utils import timezone
 
-# {
-# "name" : "Yash", 
-# "contact_details" : "having@abc.com", 
-# "address" : "336, marina road, india", 
-# "vendor_code" : "ABCD", 
-# "on_time_delivery_rate" : 0.0, 
-# "quality_rating_avg" : 0.0,
-# "average_response_time" : 0.0,
-# "fulfillment_rate" : 0.0
-# }
-
 class Vendor(models.Model):
     name = models.CharField(max_length=255)
     contact_details = models.TextField()

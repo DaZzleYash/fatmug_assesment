@@ -40,9 +40,8 @@ def calculate_and_update_metrics(vendor, save=True):
     if save:
         vendor.save()
 
+# These are the signals that will be triggered whenever the vendor is saved or deleted(basically updated)
 def update_vendor_metrics_on_po_save(sender, instance, **kwargs):
-    print("in save..................")
-    print(instance.vendor)
     calculate_and_update_metrics(instance.vendor)
 
 def update_vendor_metrics_on_po_delete(sender, instance, **kwargs):
